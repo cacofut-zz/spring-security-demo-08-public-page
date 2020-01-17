@@ -8,6 +8,10 @@
   <properties>
 	<springframework.version>5.2.1.RELEASE</springframework.version>
 	<springsecurity.version>5.2.1.RELEASE</springsecurity.version>
+	<hibernate.version>5.2.16.Final</hibernate.version>
+	<mysql.connector.version>5.1.45</mysql.connector.version>
+	<c3po.version>0.9.5.2</c3po.version>
+	<lombok.version>1.18.10</lombok.version>			
 	<maven.compiler.source>1.8</maven.compiler.source>
 	<maven.compiler.target>1.8</maven.compiler.target>
   </properties>
@@ -15,6 +19,13 @@
   
   <dependencies>
   
+  	<!-- Spring MVC support -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	  
     <!-- Spring Security -->
     <!-- Spring-security-web -->
     <dependency>
@@ -37,12 +48,41 @@
 	  <version>${springsecurity.version}</version>
 	</dependency>
 
-	<!-- Spring MVC support -->
+
+	<!-- Spring Transactions -->
 	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-webmvc</artifactId>
-		<version>${springframework.version}</version>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${springframework.version}</version>
 	</dependency>
+       
+    <!-- Spring ORM -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>${springframework.version}</version>
+    </dependency>
+
+	<!-- Hibernate Core -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	
+	<!-- Add MySQL and C3P0 support -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.45</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.mchange</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>${c3po.version}</version>
+	</dependency>
+	
 	
 	<!-- Servlet, JSP and JSTL support -->
 	<dependency>
@@ -70,6 +110,21 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>  
+    
+    <!-- Hibernate Validator -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>6.0.7.Final</version>
+	</dependency>
+	
+	<!-- Project Lombok -->
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>${lombok.version}</version>
+		<scope>provided</scope>
+	</dependency>
     
   </dependencies>
   

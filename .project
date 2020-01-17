@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>spring-security-demo-08-public-page</name>
+	<name>spring-security-demo-09-jdbc-bcrypt</name>
 	<comment></comment>
 	<projects>
 	</projects>
